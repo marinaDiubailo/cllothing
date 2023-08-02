@@ -1,3 +1,5 @@
+@import "../../default_variables.scss";
+
 .category-container {
 	min-width: 30%;
 	height: 240px;
@@ -57,12 +59,18 @@
 			font-weight: bold;
 			margin: 0 6px 0;
 			font-size: 22px;
-			color: #4a4a4a;
+			color: $color-gray-800;
 		}
 
 		p {
-			font-weight: lighter;
+			color: $color-gray-600;
+			font-weight: 300;
 			font-size: 16px;
 		}
+	}
+}
+@media (min-width: 1340px) {
+	.category-container {
+		height: 380px;
 	}
 }
