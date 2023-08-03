@@ -35,10 +35,10 @@ const Navigation = () => {
 						</li>
 						<li>
 							<NavLink
-								to='/signin'
+								to='/auth'
 								className={({ isActive }) => (isActive ? 'active' : undefined)}
 							>
-								SIGNIN
+								SIGN IN
 							</NavLink>
 						</li>
 					</ul>
