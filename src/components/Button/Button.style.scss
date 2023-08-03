@@ -1,0 +1,46 @@
+@import "../../default_variables.scss";
+
+.button-container {
+	min-width: 165px;
+	width: auto;
+	height: 50px;
+	letter-spacing: 0.5px;
+	line-height: 50px;
+	padding: 0 35px 0 35px;
+	font-size: 15px;
+	background-color: $color-gray-1000;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 700;
+	border: none;
+	display: flex;
+	justify-content: center;
+
+	&:hover {
+		background-color: $color-gray-100;
+		color: $color-gray-1000;
+		border: 1px solid $color-gray-1000;
+	}
+
+	&.google-sign-in {
+		background-color: $color-blue-100;
+		color: $color-gray-100;
+
+		&:hover {
+			background-color: $color-blue-200;
+			border: none;
+		}
+	}
+
+	&.inverted {
+		background-color: $color-gray-100;
+		color: $color-gray-1000;
+		border: 1px solid $color-gray-1000;
+
+		&:hover {
+			background-color: $color-gray-1000;
+			color: $color-gray-100;
+			border: none;
+		}
+	}
+}
