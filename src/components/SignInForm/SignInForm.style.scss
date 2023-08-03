@@ -1,4 +1,4 @@
-.sign-up-container {
+.sign-in-container {
 	display: flex;
 	flex-direction: column;
 	width: 380px;
@@ -7,5 +7,9 @@
 		margin: 10px 0;
 		font-size: 18px;
 		font-weight: 700;
+	}
+	.buttons-container {
+		display: flex;
+		justify-content: space-between;
 	}
 }
