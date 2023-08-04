@@ -4,10 +4,10 @@ import { CartContext } from '../../contexts/cart-context';
 import './CartIcon.styles.scss';
 
 const CartIcon = () => {
-	const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+	const { setIsCartOpen } = useContext(CartContext);
 
 	const toggleHandler = () => {
-		setIsCartOpen(!isCartOpen);
+		setIsCartOpen(isCartOpen => !isCartOpen);
 	};
 
 	return (
