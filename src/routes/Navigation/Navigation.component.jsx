@@ -3,11 +3,15 @@ import { Outlet, NavLink } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import Button from '../../components/Button/Button.component';
 import { UserContext } from '../../contexts/user.context';
+import { CartContext } from '../../contexts/cart-context';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
+import CartIcon from '../../components/CartIcon/CartIcon.component';
+import CartDropdown from '../../components/CartDropdown/CartDropdown.component';
 import './Navigation.styles.scss';
 
 const Navigation = () => {
 	const { currentUser } = useContext(UserContext);
+	const { isCartOpen } = useContext(CartContext);
 
 	return (
 		<>
@@ -58,8 +62,12 @@ const Navigation = () => {
 								</NavLink>
 							</li>
 						)}
+						<li>
+							<CartIcon />
+						</li>
 					</ul>
 				</nav>
+				{isCartOpen && <CartDropdown />}
 			</div>
 			<Outlet />
 		</>
