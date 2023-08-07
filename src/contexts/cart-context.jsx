@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useMemo } from 'react';
 
 const addCartItem = (cartItems, productToAdd) => {
 	const foundItem = cartItems.find(item => item.id === productToAdd.id);
@@ -29,7 +29,13 @@ export const CartProvider = ({ children }) => {
 		setCartItems(addCartItem(cartItems, productToAdd));
 	};
 
-	const value = { isCartOpen, setIsCartOpen, addItemToCart, cartItems };
+	const count = useMemo(() => {
+		return cartItems.reduce((total, cartItem) => {
+			return (total += cartItem.quantity);
+		}, 0);
+	}, [cartItems]);
+
+	const value = { isCartOpen, setIsCartOpen, addItemToCart, cartItems, count };
 
 	return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

@@ -4,7 +4,7 @@ import { CartContext } from '../../contexts/cart-context';
 import './CartIcon.styles.scss';
 
 const CartIcon = () => {
-	const { setIsCartOpen } = useContext(CartContext);
+	const { setIsCartOpen, count } = useContext(CartContext);
 
 	const toggleHandler = () => {
 		setIsCartOpen(isCartOpen => !isCartOpen);
@@ -16,7 +16,7 @@ const CartIcon = () => {
 			onClick={toggleHandler}
 		>
 			<ShoppingIcon className='shopping-icon' />
-			<span className='item-count'>10</span>
+			<span className='item-count'>{count}</span>
 		</div>
 	);
 };
