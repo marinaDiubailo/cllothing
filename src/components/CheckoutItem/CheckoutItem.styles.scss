@@ -1,0 +1,74 @@
+@import "../../default_variables.scss";
+
+.checkout-item-container {
+	width: 100%;
+	display: flex;
+	min-height: 100px;
+	border-bottom: 1px solid $color-gray-500;
+	padding: 15px 0;
+	font-size: 20px;
+	align-items: center;
+
+	.image-container {
+		width: 23%;
+		padding-right: 15px;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.name,
+	.quantity,
+	.price {
+		width: 23%;
+	}
+
+	.quantity {
+		display: flex;
+
+		.arrow {
+			font-size: inherit;
+			color: $color-gray-550;
+			&:hover {
+				color: $color-gray-1000;
+			}
+		}
+
+		.value {
+			align-self: center;
+			margin: 0 10px;
+		}
+	}
+
+	.remove-button-container {
+		padding-left: 12px;
+		.cross-button {
+			position: relative;
+			width: 30px;
+			height: 30px;
+			&::before,
+			&::after {
+				content: "";
+				top: 45%;
+				left: 20%;
+				position: absolute;
+				width: 20px;
+				height: 2px;
+				background-color: $color-gray-550;
+			}
+			&::before {
+				transform: rotate(45deg);
+				-webkit-transform: rotate(45deg);
+			}
+			&::after {
+				-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+			&:hover::after,
+			&:hover::before {
+				background-color: $color-gray-800;
+			}
+		}
+	}
+}
