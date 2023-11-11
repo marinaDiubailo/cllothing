@@ -1,50 +1,52 @@
-import { CART_ACTION_TYPES } from './cart.types';
-import { createAction } from '../../utils/reducer/reducer.utils';
+// import { CART_ACTION_TYPES } from './cart.types';
+// import { createAction } from '../../utils/reducer/reducer.utils';
 
-const addCartItem = (cartItems, productToAdd) => {
-	const foundItem = cartItems.find(item => item.id === productToAdd.id);
+export const addCartItem = (cartItems, productToAdd) => {
+    const foundItem = cartItems.find((item) => item.id === productToAdd.id);
 
-	if (foundItem) {
-		return cartItems.map(item =>
-			item.id === productToAdd.id
-				? { ...item, quantity: item.quantity + 1 }
-				: item
-		);
-	}
+    if (foundItem) {
+        return cartItems.map((item) =>
+            item.id === productToAdd.id
+                ? { ...item, quantity: item.quantity + 1 }
+                : item,
+        );
+    }
 
-	return [...cartItems, { ...productToAdd, quantity: 1 }];
+    return [...cartItems, { ...productToAdd, quantity: 1 }];
 };
 
-const deleteCartItem = (cartItems, cartItemToDelete) => {
-	const foundItem = cartItems.find(item => item.id === cartItemToDelete.id);
+export const deleteCartItem = (cartItems, cartItemToDelete) => {
+    const foundItem = cartItems.find((item) => item.id === cartItemToDelete.id);
 
-	if (foundItem.quantity === 1) {
-		return cartItems.filter(item => item.id !== foundItem.id);
-	}
+    if (foundItem.quantity === 1) {
+        return cartItems.filter((item) => item.id !== foundItem.id);
+    }
 
-	return cartItems.map(item =>
-		item.id === foundItem.id ? { ...item, quantity: item.quantity - 1 } : item
-	);
+    return cartItems.map((item) =>
+        item.id === foundItem.id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item,
+    );
 };
 
-const clearCartItem = (cartItems, cartItemToClear) => {
-	return cartItems.filter(item => item.id !== cartItemToClear.id);
+export const clearCartItem = (cartItems, cartItemToClear) => {
+    return cartItems.filter((item) => item.id !== cartItemToClear.id);
 };
 
-export const setIsCartOpen = bool =>
-	createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, bool);
+// export const setIsCartOpen = bool =>
+// 	createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, bool);
 
-export const addItemToCart = (cartItems, productToAdd) => {
-	const newCartItems = addCartItem(cartItems, productToAdd);
-	return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
-};
+// export const addItemToCart = (cartItems, productToAdd) => {
+// 	const newCartItems = addCartItem(cartItems, productToAdd);
+// 	return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
+// };
 
-export const deleteItemFromCart = (cartItems, cartItemToDelete) => {
-	const newCartItems = deleteCartItem(cartItems, cartItemToDelete);
-	return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
-};
+// export const deleteItemFromCart = (cartItems, cartItemToDelete) => {
+// 	const newCartItems = deleteCartItem(cartItems, cartItemToDelete);
+// 	return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
+// };
 
-export const clearItemFromCart = (cartItems, cartItemToClear) => {
-	const newCartItems = clearCartItem(cartItems, cartItemToClear);
-	return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
-};
+// export const clearItemFromCart = (cartItems, cartItemToClear) => {
+// 	const newCartItems = clearCartItem(cartItems, cartItemToClear);
+// 	return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
+// };

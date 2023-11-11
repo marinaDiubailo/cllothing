@@ -1,63 +1,64 @@
 @import "../../default_variables.scss";
 
 .button-container {
-	min-width: 165px;
-	width: auto;
-	height: 50px;
-	letter-spacing: 0.5px;
-	line-height: 50px;
-	padding: 0 20px;
-	font-size: 15px;
-	background-color: $color-gray-1000;
-	color: $color-gray-100;
-	text-transform: uppercase;
-	font-weight: 700;
-	border: none;
-	display: flex;
-	justify-content: center;
+    min-width: 165px;
+    width: auto;
+    height: 50px;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 15px;
+    background-color: $color-gray-1000;
+    color: $color-gray-100;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-	&:hover {
-		background-color: $color-gray-100;
-		color: $color-gray-1000;
-		border: 1px solid $color-gray-1000;
-	}
+    &:hover {
+        background-color: $color-gray-100;
+        color: $color-gray-1000;
+        border: 1px solid $color-gray-1000;
+    }
 
-	&.google-sign-in {
-		background-color: $color-blue-100;
-		color: $color-gray-100;
+    &.google-sign-in {
+        background-color: $color-blue-100;
+        color: $color-gray-100;
 
-		&:hover {
-			background-color: $color-blue-200;
-			border: none;
-		}
-	}
+        &:hover {
+            background-color: $color-blue-200;
+            border: none;
+        }
+    }
 
-	&.inverted {
-		background-color: $color-gray-100;
-		color: $color-gray-1000;
-		border: 1px solid $color-gray-1000;
+    &.inverted {
+        background-color: $color-gray-100;
+        color: $color-gray-1000;
+        border: 1px solid $color-gray-1000;
 
-		&:hover {
-			background-color: $color-gray-1000;
-			color: $color-gray-100;
-			border: none;
-		}
-	}
+        &:hover {
+            background-color: $color-gray-1000;
+            color: $color-gray-100;
+            border: none;
+        }
+    }
 
-	&.rounded {
-		max-width: 100px;
-		min-width: 100px;
-		font-size: 12px;
-		padding: 0px;
-		background-color: $color-gray-100;
-		color: $color-gray-1000;
-		border: 1px solid $color-gray-1000;
-		border-radius: 15px;
+    &.rounded {
+        max-width: 100px;
+        min-width: 100px;
+        font-size: 12px;
+        padding: 0px;
+        background-color: $color-gray-100;
+        color: $color-gray-1000;
+        border: 1px solid $color-gray-1000;
+        border-radius: 15px;
 
-		&:hover {
-			background-color: $color-gray-1000;
-			color: $color-gray-100;
-			border: none;
-		}
-	}
+        &:hover {
+            background-color: $color-gray-1000;
+            color: $color-gray-100;
+            border: none;
+        }
+    }
 }

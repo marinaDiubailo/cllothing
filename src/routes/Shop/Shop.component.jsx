@@ -4,30 +4,25 @@ import { Routes, Route } from 'react-router-dom';
 import CategoriesPreview from '../CategoriesPreview/CategoriesPreview.component';
 import Category from '../Category/Category.component';
 import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils';
-import { setCategories } from '../../store/categories/categories.action';
+import { setCategories } from '../../store/categories/categories.reducer';
+//import { setCategories } from '../../store/categories/categories.action';
 
 const Shop = () => {
-	const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-	useEffect(() => {
-		(async () => {
-			const categoriesArray = await getCategoriesAndDocuments();
-			dispatch(setCategories(categoriesArray));
-		})();
-	}, []);
+    useEffect(() => {
+        (async () => {
+            const categoriesArray = await getCategoriesAndDocuments();
+            dispatch(setCategories(categoriesArray));
+        })();
+    }, [dispatch]);
 
-	return (
-		<Routes>
-			<Route
-				index
-				element={<CategoriesPreview />}
-			/>
-			<Route
-				path=':category'
-				element={<Category />}
-			/>
-		</Routes>
-	);
+    return (
+        <Routes>
+            <Route index element={<CategoriesPreview />} />
+            <Route path=":category" element={<Category />} />
+        </Routes>
+    );
 };
 
 export default Shop;
